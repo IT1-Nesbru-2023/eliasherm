@@ -1,0 +1,39 @@
+body {
+background:repeating-linear-gradient(
+    45deg,
+    #f2f2f2,
+    #f2f2f2 40px,
+    #a9cbd9 40px,
+    #a9cbd9 80px);
+    background-attachment: fixed;
+}
+div {
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.5); 
+    border: 1px solid #abfff5;
+    padding: 8px 2px;
+    margin:auto;
+}
+.bildeEN, .bildeTO {
+    border: 1px solid #abfff5;
+    border-radius: 100px;
+    width: 80%;
+    height: 45%;
+
+}
+.overskrift{
+    font-size: 90px;
+    color: #f4da15;
+    text-shadow: 2px 2px #3b69b8;
+    font-family: "Brush Script MT",cursive;
+    position:fixed;
+    left: 170px;
+    top:-90px;
+}
+.akkuratna{
+    margin-top: 100px;
+}
+p, h1, h3{
+    text-align: center;
+    color: #3b69b8;
+}
