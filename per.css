@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(92, 92, 92);
+}
+section{
+    display:grid;
+    grid-template-columns: repeat(18, 80px);
+    grid-template-rows: repeat(9,80px);
+    gap: 5px;
+    background-color: rgb(0, 0, 0);
+}
+div{
+background-color: aliceblue;
+border-radius: 4px;
+}
+.spacerow2{
+    grid-column:span 16;
+}
+.spacerow3and4{
+    grid-column:span 10;
+}
+.spacenede {
+    background-color: rgba(0, 0, 0, 0);
+}
+.usynlig{ 
+    opacity: 0;
+}
+.tall{
+    color:rgb(255, 108, 108);
+}
+.forkort{
+    font-size: larger;
+}
+button{
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-image: url("shocked-black-guy.gif");
+    background-size: cover;
+    background-position: 70%;
+    border-radius: 15px;
+}
