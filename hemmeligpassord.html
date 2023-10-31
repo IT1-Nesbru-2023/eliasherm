@@ -11,8 +11,12 @@
     <script>
         let passord = prompt("Velg et passord")
         let gjett = prompt("Gjett passordet")
+
         if (gjett == "?lengde") {
             document.write("Antall bokstaver i passordet: " + passord.length)
+        }
+        if (passord.length < 1) {
+            document.write("Du må velge et passord!")
         }
         else if (gjett == "?1") {
             if (passord.length >= 1) {
@@ -39,15 +43,17 @@
             document.write("Passordet i små bokstaver er: " + passord.toLowerCase())
         }
 
-        if (gjett == passord) {
+        if (gjett == passord && passord.length >= 1) {
             document.write("Du gjettet riktig")
         }
         else {
+
             document.write("<br><br>Prøv igjen")
         }
 
 
     </script>
+    <button onClick="window.location.reload();">Last inn siden på nytt</button>
 </body>
 
 </html>
