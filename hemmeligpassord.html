@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let passord = prompt("Velg et passord")
+        let gjett = prompt("Gjett passordet")
+        if (gjett == "?lengde") {
+            document.write("Antall bokstaver i passordet: " + passord.length)
+        }
+        else if (gjett == "?1") {
+            if (passord.length >= 1) {
+                document.write("Første bokstav i passordet: " + passord[0])
+            }
+            else {
+                document.write("Passordet er tomt.");
+            }
+        }
+        else if (gjett == "?2") {
+            if (passord.length >= 2) {
+                document.write("Andre bokstav i passordet: " + passord[1])
+            }
+            else { document.write("Passordet har ikke så mange bokstaver!") }
+        }
+
+        if (gjett == "?siste") {
+            document.write("Siste bokstav i passordet: " + passord[passord.length - 1])
+        }
+        if (gjett == "?store") {
+            document.write("Passordet i store bokstaver er: " + passord.toUpperCase())
+        }
+        if (gjett == "?små") {
+            document.write("Passordet i små bokstaver er: " + passord.toLowerCase())
+        }
+
+        if (gjett == passord) {
+            document.write("Du gjettet riktig")
+        }
+        else {
+            document.write("<br><br>Prøv igjen")
+        }
+
+
+    </script>
+</body>
+
+</html>
