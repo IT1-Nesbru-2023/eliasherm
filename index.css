@@ -1,0 +1,97 @@
+#hoved {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  gap: 5px;
+  background-color: #d2cbcb00;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "a1 a1 a1 a1 a1"
+    "a2 a3 a3 a3 a4"
+    "a2 a3 a3 a3 a4"
+    "a2 a3 a3 a3 a4"
+    "a5 a5 a5 a5 a5";
+}
+
+#hoved>div {
+  background-color: #ffffff3c;
+  border: 1px solid rgb(237, 225, 225);
+}
+
+.a1 {
+  grid-area: a1;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  font-size: 40px;
+  font-family: Impact, fantasy;
+  color: rgb(191, 191, 191)
+}
+
+.a2 {
+  grid-area: a2;
+}
+
+.a3 {
+  grid-area: a3;
+}
+
+.a4 {
+  grid-area: a4;
+}
+
+.a5 {
+  grid-area: a5;
+}
+
+.a6 {
+  grid-area: a6;
+}
+
+.a7 {
+  grid-area: a7;
+}
+
+.a8 {
+  grid-area: a8;
+}
+
+.liste {
+  display: grid;
+  gap: 3px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, auto);
+
+}
+
+button {
+  width: 1fr;
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  cursor: pointer;
+  display: block;
+}
+
+.btn:hover {
+  background-image: url("shocked-black-guy.gif");
+  background-size: cover;
+  background-position: 70%;
+  border-radius: 15px;
+}
+.boks {
+  height: 100px;
+}
+
+.boks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  height: 100px;
+  white-space: normal;
+}
