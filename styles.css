@@ -1,0 +1,48 @@
+.hoved{
+    position:relative;
+    
+    
+}
+.blåring {
+    border-radius: 50%;
+	  height: 60px;
+	  width: 60px;
+	  border: 3px solid #0085C7;
+      position:absolute;
+      
+}
+.gulring {
+    border-radius: 50%;
+	  height: 60px;
+	  width: 60px;
+	  border: 3px solid #F4C300;
+      position: absolute;
+      top: 30px;
+      left: 32.5px;
+}
+.svartring {
+    border-radius: 50%;
+	  height: 60px;
+	  width: 60px;
+	  border: 3px solid #000000;
+      position: absolute;
+      left: 65px;
+}
+.grønnring {
+    border-radius: 50%;
+	  height: 60px;
+	  width: 60px;
+	  border: 3px solid #009F3D;
+      position: absolute;
+      top: 30px;
+      left:97.5px;
+      
+}
+.rødring {
+    border-radius: 50%;
+	  height: 60px;
+	  width: 60px;
+	  border: 3px solid #DF0024;
+      position: absolute;
+      left: 130px
+}
