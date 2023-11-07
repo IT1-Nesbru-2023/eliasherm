@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Aar = prompt("Skriv inn et årstall")
+        let skuddAar = false;
+        let link = "https://www.onthisday.com/events/date/" + Aar /*Jeg lager en variabel for linken som kommer hvis året ikke er et skuddår. Denne linken endrer seg etter hvilket år brukeren skriver inn (Aar)*/
+        if (Aar % 4 == 0) {
+            skudAar = true;
+            document.write("Året er et skuddår!")
+        }      /* Jeg bruker modulus for å se hva resten blir når jeg deler. Hvis resten==0, er året (Aar) et skuddår.*/
+        else {
+            document.write("Året er ikke ett skuddår :( Du kan se hva som skjedde dette året ved å trykke her: <a href='" + link + "'>" + Aar + "</a>")
+        }
+    </script>
+</body>
+
+</html>

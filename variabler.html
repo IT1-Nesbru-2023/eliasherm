@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inpTekst" placeholder="skriv inn en tekst" type="text"> 
+    <h1 id="txtResultat">Her kommer resultatet</h1>
+    <script>                /*Første programmet skrevet i JS, kun laget for å prøve input i stedeet for "prompt." Det funker nå.*/
+        let inpTekst = document.getElementById("inpTekst");
+        
+        inpTekst.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                let tall = inpTekst.value;
+                document.getElementById("txtResultat").innerText = "Det nye tallet er: " + tall;
+            }
+        });
+    </script>
+</body>
+</html>

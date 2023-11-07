@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        for (let i = 1; i < 1000; i++) {
+            let tall = Math.ceil(Math.random() * 20);
+            if (tall < 6) {
+                document.write("<br> Tallet er mindre enn 6: " + tall);
+            } else if (tall === 13) {
+                document.write("<br> Du fikk 13!");
+            } else if (tall > 6 && tall < 18) {
+                document.write("<br> Tallet er mellom 6 og 18: " + tall);
+            } else if (tall > 18) {
+                document.write("<br> Tallet er høyere enn 18: " + tall);
+            }
+        }
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indeks1.css">
+    <title>Index1</title>
+    <style>
+        #hoved {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  gap: 5px;
+  background-color: #d2cbcb00;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "a1 a1 a1 a1 a1"
+    "a2 a3 a3 a3 a4"
+    "a2 a3 a3 a3 a4"
+    "a2 a3 a3 a3 a4"
+    "a5 a5 a5 a5 a5";
+}
+
+#hoved>div {
+  background-color: #ffffff3c;
+  border: 1px solid rgb(237, 225, 225);
+}
+
+.a1 {
+  grid-area: a1;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  font-size: 40px;
+  font-family: Impact, fantasy;
+  color: rgb(191, 191, 191)
+}
+
+.a2 {
+  grid-area: a2;
+}
+
+.a3 {
+  grid-area: a3;
+}
+
+.a4 {
+  grid-area: a4;
+}
+
+.a5 {
+  grid-area: a5;
+}
+
+.a6 {
+  grid-area: a6;
+}
+
+.a7 {
+  grid-area: a7;
+}
+
+.a8 {
+  grid-area: a8;
+}
+
+.liste {
+  display: grid;
+  gap: 3px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, auto);
+
+}
+
+button {
+  width: 1fr;
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  cursor: pointer;
+  display: block;
+}
+
+.btn:hover {
+  background-image: url("shocked-black-guy.gif");
+  background-size: cover;
+  background-position: 70%;
+  border-radius: 15px;
+}
+.boks {
+  height: 100px;
+}
+
+.boks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  height: 100px;
+  white-space: normal;
+}
+.langboks {
+  display: flex;
+  align-items: center;
+  grid-column: 1 / span 3;
+}
+    </style>
+</head>
+<body>
+<div id="hoved">
+    <div class="a1"> <span>Elias sine JavaScript programmer!</span></div>
+    <div class="a2"> </div>
+    <div class="a3"> 
+        <div class="liste">
+            <div class="boks"><button type="button" class="btn"><a href="hemmeligpassord.html">Lag et hemmelig passord!</a></button></div>
+            <div class="boks"><button type="button" class="btn"><a href="skuddaar.html">Prøv ut skuddårstestern!</a></button></div>
+            <div class="boks"><button type="button" class="btn"><a href="tilfeldigtall.html">Prøv ut tilfeldig-tall-generatoren</a></button></div>
+            <div class="boks"><button type="button" class="btn"><a href="20terning.html">Prøv ut 20-terningen</a></button></div>
+            <div class="boks"><button type="button" class="btn"><a href="hemmeligpassord.html">Hemmelig Passord</a></button></div>
+            <div class="boks"><button type="button" class="btn"><a href="variabler.html">Første JS program</a></button></div>
+        </div>
+    </div>
+    <div class="a4"> </div>
+    <div class="a5"> </div>
+</div>
+</body>
+</html>
