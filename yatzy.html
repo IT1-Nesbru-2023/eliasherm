@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="yatzy.css">
+    <title>Index1</title>
+</head>
+
+<body>
+    <div id="hoved">
+        <div class="a1"> <span>Yatzy!</span></div>
+        <div class="dropdown">
+            <span>  Hvordan funker spillet?</span>
+            <div class="dropdown-content">
+                <p>Trykk på "Trill" for å trille terningene.</p>
+                <p>Trill 1-3 ganger, og trykk på riktig celle for å lagre kastet ditt.</p>
+                <p>Trykk på cellen ved siden av "bonus" for å se om du har nok poeng.</p>
+                <p>Trykk på "Restart spillet" for å begynne på nytt.</p>
+            </div>
+        </div>
+        <div class="a3">
+            <div class="liste">
+                <div id="knapp">Trill</div>
+                <div class="boks" id="terning1"><img id="terningImg"  alt=""></div>
+                <div class="boks" id="terning3"><img id="terningImg"  alt=""></div>
+                <div class="boks" id="terning2"><img id="terningImg"  alt=""></div>
+                <div class="boks" id="terning4"><img id="terningImg"  alt=""></div>
+                <div class="boks" id="terning5"><img id="terningImg"  alt=""></div>
+            </div>
+            <div>
+                <div class="a4">
+                <button class ="a4"type="submit" onClick="refreshPage()">Restart spillet</button></div>
+<br>
+<br>
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>-</th>
+                        <th>Spiller 1</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Enere</td><td id="enereCell" class="cell"></td></tr>
+                    <tr><td>Toere</td><td id="toereCell" class="cell"></td></tr>
+                    <tr><td>Treere</td><td id="treereCell" class="cell"></td></tr>
+                    <tr><td>Firere</td><td id="firereCell" class="cell"></td></tr>
+                    <tr><td>Femmere</td><td id="femmereCell" class="cell"></td></tr>
+                    <tr><td>Seksere</td><td id="seksereCell" class="cell"></td></tr>
+                    <tr><td>Sum</td><td id="sumCell"></td></tr>
+                    <tr><td>Bonus</td><td id="bonusCell"></td></tr>
+</tr>
+                </tbody>
+            </table>
+</div>
+    <script>
+        let terningImg = document.getElementById("terningImg")
+        let knapp = document.getElementById("knapp") 
+        let rolls = 0;
+        let rad = 0;
+        let alleTerningene = [0, 0, 0, 0, 0]; //teller antall for alle nummer 
+        
+        knapp.addEventListener("click", trill1)
+        function trill1() {
+
+            for (let i = 1; i <= 5; i++) {
+                let terning = document.getElementById("terning" + i);
+                let terningVerdi = Math.ceil(Math.random() * 6)                  // bestemmer verdi til hvert kast, rundet av til nærmeste ener 1-6
+                terning.innerHTML = "<img src='terning_"+terningVerdi+".png'>"; //henviser til hvilken bildefil som skal vises, "terning_" + riktig tall.
+                alleTerningene[i-1]=terningVerdi;
+
+                // Apply the shake animation class
+    terning.classList.add("shake");
+
+// Remove the shake class after the animation ends
+setTimeout(() => {
+  terning.classList.remove("shake");
+}, 300);
+            }
+    }
+    function updateSum() {
+    let sumCell = document.getElementById("sumCell");
+    let enereValue = +document.getElementById("enereCell").textContent || 0; //linjen bruker + for å konvertere innholdet i HTML-elementet med id-en "enereCell" til et numerisk format. hvis det ikke er gyldig skrives bare 0
+    let toereValue = +document.getElementById("toereCell").textContent || 0;
+    let treereValue = +document.getElementById("treereCell").textContent || 0;
+    let firereValue = +document.getElementById("firereCell").textContent || 0;
+    let femmereValue = +document.getElementById("femmereCell").textContent || 0;
+    let seksereValue = +document.getElementById("seksereCell").textContent || 0;
+
+    let sum =enereValue + toereValue + treereValue + firereValue + femmereValue + seksereValue; 
+    sumCell.textContent = sum;
+    }
+
+    bonusCell.addEventListener("click", bonus);
+
+function bonus() {
+    let sum = +document.getElementById("sumCell").textContent || 0;
+    let bonusCell = document.getElementById("bonusCell");
+
+    if (sum >= 63) {
+        alert("Du fikk bonus!");
+        bonusCell.textContent = "50";
+    } else {
+        alert("Du hadde desverre ikke mer enn 40 poeng. Ingen bonus :(")
+        bonusCell.textContent = "0";
+    }
+}
+
+
+
+    enereCell.addEventListener("click", enere)
+        
+        function enere() {
+            let antallEnere = 0        //antall enere settes til 0
+            for ( let i =1; i<=5; i++){                //kjør funksjonen for i verdier mellom 1-5
+                if (alleTerningene[i-1]==1){           //koble til array, og sett inn i plassen i-1 (første plassen i arrayen vår er jo 0, for det første terningkastet)
+                    antallEnere=antallEnere+1          //hvis det finnes en 1´er terning, øk verdi til antallenere med 1
+                }
+            }                      // setter inn antallEnere i table.
+            
+            let enereCell = document.getElementById("enereCell");
+        enereCell.textContent = antallEnere*1;    
+        alleTerningene = [0, 0, 0, 0, 0];   
+        updateSum();
+    }
+    toereCell.addEventListener("click", toere)
+    function toere() {
+        let antallToere = 0
+        for (let i=1; i<=5; i++){
+            if (alleTerningene[i-1]==2){
+                antallToere=antallToere+1
+            }
+        }
+        let toereCell=document.getElementById("toereCell")
+        toereCell.textContent=antallToere*2;
+        alleTerningene = [0, 0, 0, 0, 0];
+        updateSum();
+        
+
+    }
+    treereCell.addEventListener("click", treere)
+    function treere() {
+        let antallTreere = 0
+        for (let i=1; i<=5; i++){
+            if (alleTerningene[i-1]==3){
+                antallTreere=antallTreere+1
+            }
+        }
+        let treereCell=document.getElementById("treereCell")
+        treereCell.textContent=antallTreere*3;
+        alleTerningene = [0, 0, 0, 0, 0];
+        updateSum();
+        
+
+    }
+    firereCell.addEventListener("click", firere)
+    function firere() {
+        let antallFirere = 0
+        for (let i=1; i<=5; i++){
+            if (alleTerningene[i-1]==4){
+                antallFirere=antallFirere+1
+            }
+        }
+        let firereCell=document.getElementById("firereCell")
+        firereCell.textContent=antallFirere*4;
+        alleTerningene = [0, 0, 0, 0, 0];
+        updateSum();
+    }
+
+    femmereCell.addEventListener("click", femmere)
+    function femmere() {
+        let antallFemmere = 0
+        for (let i=1; i<=5; i++){
+            if (alleTerningene[i-1]==5){
+                antallFemmere=antallFemmere+1
+            }
+        }
+        let femmereCell=document.getElementById("femmereCell")
+        femmereCell.textContent=antallFemmere*5;
+        alleTerningene = [0, 0, 0, 0, 0];
+        updateSum();
+    }
+
+    seksereCell.addEventListener("click", seksere)
+    function seksere() {
+        let antallSeksere = 0
+        for (let i=1; i<=5; i++){
+            if (alleTerningene[i-1]==6){
+                antallSeksere=antallSeksere+1
+            }
+        }
+        let seksereCell=document.getElementById("seksereCell")
+        seksereCell.textContent=antallSeksere*6;
+        alleTerningene = [0, 0, 0, 0, 0];
+        updateSum();
+    }
+    function refreshPage(){
+    window.location.reload();   //restart knappen refresher hele siden
+} 
+
+    </script>
+</body>
+
+</html>
