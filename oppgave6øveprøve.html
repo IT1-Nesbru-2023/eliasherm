@@ -7,15 +7,13 @@
 </head>
 <body>
     <script>
-        let brukerTall1 = prompt("Skriv inn det minste tallet")
-        let brukerTall2 = prompt("Skriv inn det største tallet")
         function randomRange(tall1,tall2){
             let tilfeldigTall = Math.floor(Math.random()*(tall2-tall1) + tall1)
             document.write("Det tilfeldige tallet mellom "+tall1+" og "+tall2+" er: "+tilfeldigTall+"." )
             console.log("Elias")
 
         }
-        randomRange(brukerTall1,brukerTall2)
+        randomRange(1,10)
     </script>
 </body>
 </html>
