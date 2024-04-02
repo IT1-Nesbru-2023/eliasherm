@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visittkort-maskin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+        }
+        #visittkort {
+            width: 300px; /* størrelse for visittkort */
+            height: 200px;
+            border: 2px solid black; 
+            margin: 20px auto; /* Sentrerer kortet på siden */
+            padding: 10px; /* Litt plass inne i boksen så ikke ting kleber til kantene */
+            background-color: white; /* Holder bakgrunnen fresh og rhvit i mens man skriver, så kan man velge å endre farge senere*/
+            display: grid; /* Setter opp grid for å ha kontroll på layout */
+            grid-gap: 10px; /* Gir litt luft mellom elementene */
+            grid-template-areas: /* Jeg bruker template area for å plassere de forskjellige inputene, med grid area er det lett å endre senere også vede behpv*/
+        "a a c"
+        "b e f"
+        "g h i"
+        "j k l";
+        }
+        #navnDisplay {grid-area: a; font-size: 20px} /* Jeg gir navnet størsat størrelse, resten får hver sin plass etter grid area*/
+        #kjonnDisplay {grid-area: b} 
+        #bildeDisplay {grid-area: c}
+        #telefonDisplay {grid-area: h}
+        #stillingDisplay {grid-area:g}
+        #fodselsdagDisplay {grid-area: j}
+        #harForerkortDisplay {grid-area: k}
+        
+        .container {
+            margin: 0 auto; /* Holder formen og visittkortet sentrert */
+            width: 90%; /* Bruker mesteparten av bredden, men ikke helee */
+        }
+        .inputFelt {
+            margin-bottom: 10px; /* Holder input feltene fra å klebe sammen */
+        }
+        .label {
+            margin-right: 5px; /* Litt luft mellom label og input felt */
+        }
+        #bildeDisplay img {
+            max-width: 100%; /* Sørger for at bildet ikke strekker seg utover kortet */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="visittkort">
+        <!-- Disse divs viser dataen du fyller inn, plassert etter griden satt opp i CSS -->
+        <div id="navnDisplay">Navn: </div>
+        <div id="kjonnDisplay">Kjønn: </div>
+        <div id="stillingDisplay">Stilling: </div>
+        <div id="telefonDisplay">Telefon: </div>
+        <div id="fodselsdagDisplay">Fødselsdag: </div>
+        <div id="harForerkortDisplay">Førerkort:</div>
+        <div id="bildeDisplay"></div> <!-- bildet ditt ender opp her -->
+    </div>
+
+    <!-- Input feltene for å fylle inn data -->
+    <div class="inputFelt">
+        <label class="label" for="navnInput">Navn:</label>
+        <input type="text" id="navnInput">
+    </div>
+    <div class="inputFelt">
+        <label class="label" for="kjonnInput">Kjønn:</label>
+        <select id="kjonnInput">
+            <option value="Mann">Mann</option>
+            <option value="Kvinne">Kvinne</option>
+            <option value="Annet">Annet</option>
+        </select>
+    </div>
+    <div class="inputFelt">
+        <label class="label" for="stillingInput">Stilling:</label>
+        <input type="text" id="stillingInput">
+    </div>
+    <div class="inputFelt">
+        <label class="label" for="telefonInput">Telefon:</label>
+        <input type="text" id="telefonInput" pattern="[0-9]{8}" maxlength="8"> <!--pattern og maxlength sier hvilke tall man kan bruke og begrenser nummeret til 8 sifferr -->
+    </div>
+    <div class="inputFelt">
+        <label class="label" for="fodselsdagInput">Fødselsdag:</label>
+        <input type="date" id="fodselsdagInput">
+    </div>
+    <div class="inputFelt">
+        <label class="label" for="harForerkortInput">Har førerkort:</label>
+        <input type="checkbox" id="harForerkortInput">
+    </div>
+    <div class="inputFelt">
+        <label class="label" for="bakgrunnInput">Farge på bakgrunnen:</label>
+        <input type="color" id="bakgrunnInput">
+    </div>
+    <div class="inputFelt">
+        Ramme:<br>
+        <input type="radio" id="rammeInput1" name="ramme" value="solid" checked> Solid<br>
+        <input type="radio" id="rammeInput2" name="ramme" value="dotted"> Dotted<br>
+        <input type="radio" id="rammeInput3" name="ramme" value="dashed"> Dashed<br>
+    </div>
+    <div class="inputFelt">
+        <label class="label" for="bildeInput">Bilde på kort: </label>
+        <input type="file" id="bildeInput" accept="image/*">
+    </div>
+    <button onclick="submitVisittkort()">Lag visittkort</button> <!-- Knappen som kicker i gang magien :):):)-->
+</div>
+
+<script src="visittkort.js"></script> <!-- Kjører JavaScriptet som gjør oppdateringene  ( se js fil)-->
+</body>
+</html>
