@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilfeldig Lagvelger</title>
+    <link rel="stylesheet" href="lagvelger.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Litt bedre lagvelger enn Lunev sin</h1>
+        <div id="inputs">
+            <input type="text" id="navn1" placeholder="Skriv inn navn 1">
+            <input type="text" id="navn2" placeholder="Skriv inn navn 2">
+            <input type="text" id="navn3" placeholder="Skriv inn navn 3">
+            <input type="text" id="navn4" placeholder="Skriv inn navn 4">
+            <input type="text" id="navn5" placeholder="Skriv inn navn 5">
+            <input type="text" id="navn6" placeholder="Skriv inn navn 6">
+            <input type="text" id="navn7" placeholder="Skriv inn navn 7">
+            <input type="text" id="navn8" placeholder="Skriv inn navn 8">
+            <input type="text" id="navn9" placeholder="Skriv inn navn 9">
+            <input type="text" id="navn10" placeholder="Skriv inn navn 10">
+        </div>
+        <label for="antallLag">Velg antall lag:</label>
+        <input type="number" id="antallLag" min="2" max="10" value="2">
+        <button id="velgKnapp">Velg tilfeldige lag</button>
+        <div id="resultat">
+            <h2>Valgte Lag:</h2>
+            <div id="lagListe"></div>
+        </div>
+    </div>
+    <script src="lagvelger.js"></script>
+</body>
+</html>
